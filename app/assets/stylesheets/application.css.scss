@@ -23,10 +23,11 @@
 .blank.space {
 	height: 7000px;
 }
-.ui.large.top.inverted.pointing.fixed.secondary.menu {
-	background-color: #D93600;
+.ui.large.top.pointing.fixed.secondary.menu {
+	background-color: rgba(0, 0, 0, 0.57);
 	border: none;
-	.active.item {
-		color: #999999;
-	}
+	padding-bottom: 5px;
+	.item {
+		color: white;
+	}	
 }
