@@ -16,6 +16,17 @@
 
 @import "semantic-ui";
 
-.brand-logo {
-  margin-left: 5px;
+.main.container {
+	background-image: url("http://iwallpapers2.free.fr/images/Abstract/Sci_Fi_Wallpapers_1600x900.jpg");
+	height: 1000px;	
+}
+.blank.space {
+	height: 7000px;
+}
+.ui.large.top.inverted.pointing.fixed.secondary.menu {
+	background-color: #D93600;
+	border: none;
+	.active.item {
+		color: #999999;
+	}
 }

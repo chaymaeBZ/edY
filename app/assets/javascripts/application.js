@@ -15,3 +15,26 @@
 //= require turbolinks
 //= require semantic-ui
 //= require_tree .
+
+$(document)
+  .ready(function() {
+    
+    // change menu style when passed
+    $('blank.space').visibility({
+      once: false,
+      onBottomPassed: function() {
+
+        $('.ui.large.top.inverted.pointing.fixed.secondary.menu').transition('fade in');
+        alert("Hello! I am an alert box!!");
+      },
+      onBottomPassedReverse: function() { 
+        $('.ui.large.top.inverted.pointing.fixed.secondary.menu').transition('fade out');
+      }
+    });
+  });
+jQuery(document).ready(function(){
+    $(".ui.large.top.inverted.pointing.fixed.secondary.menu").fadeOut(1000,function(){
+        $(".ui.large.top.inverted.pointing.fixed.secondary.menu").fadeIn(1000);
+    });
+});
+
