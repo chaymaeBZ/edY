@@ -16,3 +16,19 @@
 //= require semantic-ui
 //= require_tree .
 
+var readyLoad;
+
+
+
+readyLoad = function() {
+  var navbar = document.getElementById('navbar');
+  <% if current_page?(root_path) %>
+    var root = document.getElementById("home-item");
+    alert("home");
+    root.className += 'active';
+  <% end %>    
+};
+
+
+$(document).ready(readyLoad);
+$(document).on('turbolinks:load', readyLoad);
