@@ -23,10 +23,16 @@
 .blank.space {
 	height: 7000px;
 }
-.top.pointing.fixed.secondary.menu {
+.active.item {
+	background: none;
+}
+.top.inverted.pointing.fixed.secondary.menu {
+	&:hover {
+		color: #FFFFFF;
+	}
 	background-color: rgba(0, 0, 0, 0.57);
 	border: none;
-	padding-bottom: 5px;
+	padding-bottom: 3px;
 	.item {
 		color: white;
 	}	

@@ -1,17 +1,17 @@
-<div class="ui massive top blue pointing fixed secondary menu">
+<div class="ui inverted massive top blue secondary pointing fixed menu">
   <div class="ui container">
     
-    <%= active_link_to 'Home', root_path, class: "item" %>
-    <%= active_link_to 'work', "#", class: "item" %>
-    <%= active_link_to 'Company', "#", class: "item" %>
-    <%= active_link_to 'Careers', "#", class: "item" %>
+    <%= active_link_to 'Home', root_path, class: "item", active: :exact %>
+    <%= active_link_to 'work', "#", class: "item", active: :exact %>
+    <%= active_link_to 'Company', "#", class: "item", active: :exact %>
+    <%= active_link_to 'Careers', "#", class: "item", active: :exact %>
     
     <div class="right menu">
       <div class="item">
-        <%= link_to "Log in", new_user_session, class: "ui inverted button" %>
+        <%= link_to "Log in", new_user_session_url, class: "ui inverted button" %>
       </div>
       <div class="item">
-        <%= link_to "Sign up", new_user_registration, class: "ui inverted button" %>
+        <%= link_to "Sign up", new_user_registration_url, class: "ui inverted button" %>
       </div>
     </div>
   </div>
