@@ -1,15 +1,17 @@
-<div id="navbar" class="ui massive top blue pointing fixed secondary menu">
+<div class="ui massive top blue pointing fixed secondary menu">
   <div class="ui container">
-    <a id="home-item" class=" item">Home</a>
-    <a class="item">Work</a>
-    <a class="item">Company</a>
-    <a class="item">Careers</a>
+    
+    <%= active_link_to 'Home', root_path, class: "item" %>
+    <%= active_link_to 'work', "#", class: "item" %>
+    <%= active_link_to 'Company', "#", class: "item" %>
+    <%= active_link_to 'Careers', "#", class: "item" %>
+    
     <div class="right menu">
       <div class="item">
-        <a class="ui inverted button">Log in</a>
+        <%= link_to "Log in", new_user_session, class: "ui inverted button" %>
       </div>
       <div class="item">
-        <a class="ui inverted button">Sign Up</a>
+        <%= link_to "Sign up", new_user_registration, class: "ui inverted button" %>
       </div>
     </div>
   </div>
