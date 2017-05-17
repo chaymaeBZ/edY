@@ -10,8 +10,10 @@
 
   <body>
     <div class="<%= wrapper_except_home %>" >
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+      <% if notice %><div class="ui raised secondary inverted blue segment notice"><%= notice %></div><% end %>   
+      <% if alert %><div class="ui raised secondary inverted red segment alert"><%= alert %></div><% end %>
+      <%= render 'layouts/navbar' %>
+      <%= yield %>
     </div>
   </body>
 </html>
