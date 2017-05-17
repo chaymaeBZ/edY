@@ -15,7 +15,9 @@
  */
 
 @import "semantic-ui";
-
+.wrapper {
+	margin: 100px 150px;
+}
 .main.container {
 	background-image: url("http://iwallpapers2.free.fr/images/Abstract/Sci_Fi_Wallpapers_1600x900.jpg");
 	height: 1000px;	
