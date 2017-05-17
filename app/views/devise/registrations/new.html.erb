@@ -1,0 +1,62 @@
+<div class="form wrapper">
+
+<h2>Sign up</h2>
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' } ) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="two fields">
+    <div class="field">
+      <%= f.label :name  %>
+      <%= f.text_field :name, placeholder: 'name', autofocus: true %>
+    </div> 
+    <div class="field">
+      <%= f.label :phone  %>
+      <%= f.text_field :phone, placeholder: 'phone' %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: 'email' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: 'password' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'password' %>
+  </div>
+
+  <%= f.submit "Sign up", class: "ui fluid blue button" %>
+  <div class="ui horizontal divider" style="padding: 10px 0px;">
+    Or
+  </div>
+  <div class="three fields">
+    <div class="field">
+	<%= button_tag class: 'ui fluid facebook button' do %>
+	  <%= content_tag :i, "", class: 'facebook icon' %> Facebook
+	<% end %>
+    </div>
+    <div class="field">
+	<%= button_tag class: 'ui fluid twitter button' do %>
+	  <%= content_tag :i, "", class: 'twitter icon' %> Twitter
+	<% end %>
+    </div>
+    <div class="field">
+	<%= button_tag class: 'ui fluid red button' do %>
+	  <%= content_tag :i, "", class: 'google icon' %> Gmail
+	<% end %>
+    </div>
+  </div>
+  
+<% end %>
+<div style="margin: 40px;"></div>
+<%= render "devise/shared/links" %>
+
+</div>
