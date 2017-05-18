@@ -1,29 +1,27 @@
 <div class="form container">
 
-
-
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' } ) do |f| %>
 
-<h1 class="ui dividing header" style="margin-bottom:30px;">Sign up</h1>
-  <%= devise_error_messages! %>
-
+<h1 class="ui dividing header">Sign up</h1>
+  <div class="error messages">
+    <%= devise_error_messages! %>
+  </div>
   <div class="two fields">
-    <div class="field">
+    <div class="field <%= 'error' if resource.errors[:name].any? %>" >
       <%= f.label :name  %>
       <%= f.text_field :name, placeholder: 'name', autofocus: true %>
     </div> 
-    <div class="field">
+    <div class="field <%= 'error' if resource.errors[:phone].any? %>">
       <%= f.label :phone  %>
       <%= f.text_field :phone, placeholder: 'phone' %>
     </div>
   </div>
-  <div class="field">
+  <div class="field  <%= 'error' if resource.errors[:email].any? %> ">
     <%= f.label :email %>
     <%= f.email_field :email, placeholder: 'email' %>
   </div>
 
-  <div class="field">
+  <div class="field <%= 'error' if resource.errors[:password].any? %>">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -31,7 +29,7 @@
     <%= f.password_field :password, autocomplete: "off", placeholder: 'password' %>
   </div>
 
-  <div class="field">
+  <div class="field <%= 'error' if resource.errors[:password_confirmation].any? %>">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'password' %>
   </div>

@@ -18,6 +18,11 @@
 .wrapper {
 	margin: 100px 150px 0px;
 }
+
+.ui.dividing.header {
+	margin-bottom:30px;
+}
+
 .main.container {
 	background-image: url("http://iwallpapers2.free.fr/images/Abstract/Sci_Fi_Wallpapers_1600x900.jpg");
 	height: 1000px;	
@@ -38,4 +43,9 @@
 }
 .form.container {
 	margin: 0px 150px;
+}
+
+.error.messages {
+	color: #af3d3d;
+	margin-bottom: 30px;
 }

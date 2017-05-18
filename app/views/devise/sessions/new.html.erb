@@ -3,7 +3,7 @@
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'ui form' }) do |f| %>
-<h1 class="ui dividing header" style="margin-bottom:30px;">Log in</h1>
+<h1 class="ui dividing header">Log in</h1>
   <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
@@ -47,6 +47,7 @@
     </div>
   </div>
 <% end %>
+
 
 <div style="margin: 40px;"></div>
 <%= render "devise/shared/links" %>
