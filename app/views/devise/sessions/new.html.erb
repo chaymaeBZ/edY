@@ -1,26 +1,54 @@
-<h2>Log in</h2>
+<div class="form container">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'ui form' }) do |f| %>
+<h1 class="ui dividing header" style="margin-bottom:30px;">Log in</h1>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
+      <div class="ui checkbox">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
+    </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <%= f.submit "Log in", class: "ui fluid blue button" %>
+
+  <div class="ui horizontal divider" style="padding: 10px 0px;">
+    Or
+  </div>
+
+  <div class="three fields">
+    <div class="field">
+	<%= button_tag class: 'ui fluid facebook button' do %>
+	  <%= content_tag :i, "", class: 'facebook icon' %> Facebook
+	<% end %>
+    </div>
+    <div class="field">
+	<%= button_tag class: 'ui fluid twitter button' do %>
+	  <%= content_tag :i, "", class: 'twitter icon' %> Twitter
+	<% end %>
+    </div>
+    <div class="field">
+	<%= button_tag class: 'ui fluid google plus button' do %>
+	  <%= content_tag :i, "", class: 'google plus icon' %> Google Plus
+	<% end %>
+    </div>
   </div>
 <% end %>
 
+<div style="margin: 40px;"></div>
 <%= render "devise/shared/links" %>
+
+</div>

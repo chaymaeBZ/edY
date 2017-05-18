@@ -16,7 +16,7 @@
 
 @import "semantic-ui";
 .wrapper {
-	margin: 100px 150px;
+	margin: 100px 150px 0px;
 }
 .main.container {
 	background-image: url("http://iwallpapers2.free.fr/images/Abstract/Sci_Fi_Wallpapers_1600x900.jpg");
@@ -29,13 +29,13 @@
 	background: none;
 }
 .top.inverted.pointing.fixed.secondary.menu {
-	&:hover {
-		color: #FFFFFF;
-	}
 	background-color: rgba(0, 0, 0, 0.57);
 	border: none;
 	padding-bottom: 3px;
 	.item {
 		color: white;
 	}	
+}
+.form.container {
+	margin: 0px 150px;
 }

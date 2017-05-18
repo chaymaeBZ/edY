@@ -1,10 +1,13 @@
-<div class="form wrapper">
+<div class="form container">
 
-<h2>Sign up</h2>
+
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'ui form' } ) do |f| %>
+
+<h1 class="ui dividing header" style="margin-bottom:30px;">Sign up</h1>
   <%= devise_error_messages! %>
+
   <div class="two fields">
     <div class="field">
       <%= f.label :name  %>
@@ -34,26 +37,7 @@
   </div>
 
   <%= f.submit "Sign up", class: "ui fluid blue button" %>
-  <div class="ui horizontal divider" style="padding: 10px 0px;">
-    Or
-  </div>
-  <div class="three fields">
-    <div class="field">
-	<%= button_tag class: 'ui fluid facebook button' do %>
-	  <%= content_tag :i, "", class: 'facebook icon' %> Facebook
-	<% end %>
-    </div>
-    <div class="field">
-	<%= button_tag class: 'ui fluid twitter button' do %>
-	  <%= content_tag :i, "", class: 'twitter icon' %> Twitter
-	<% end %>
-    </div>
-    <div class="field">
-	<%= button_tag class: 'ui fluid red button' do %>
-	  <%= content_tag :i, "", class: 'google icon' %> Gmail
-	<% end %>
-    </div>
-  </div>
+
   
 <% end %>
 <div style="margin: 40px;"></div>
