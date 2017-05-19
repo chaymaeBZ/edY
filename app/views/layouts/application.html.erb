@@ -9,9 +9,11 @@
   </head>
 
   <body>
-    <div class="<%= wrapper_except_home %>" >
+    <div class="wrapper" >
+ 
       <% if notice %><div class="ui info message"><%= notice %></div><% end %>   
       <% if alert %><div class="ui negative message"><%= alert %></div><% end %>
+
       <%= render 'layouts/navbar' %>
       <%= yield %>
     </div>

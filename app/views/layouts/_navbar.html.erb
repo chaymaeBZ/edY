@@ -7,12 +7,18 @@
     <%= active_link_to 'Careers', "#", class: "item", active: :exact %>
     
     <div class="right menu">
+    <% if !user_signed_in? %>
       <div class="item">
         <%= link_to "Log in", new_user_session_url, class: "ui inverted button" %>
       </div>
       <div class="item">
         <%= link_to "Sign up", new_user_registration_url, class: "ui inverted button" %>
       </div>
+    <% else %>
+      <div class="item">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
