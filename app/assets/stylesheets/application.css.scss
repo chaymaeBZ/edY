@@ -23,16 +23,23 @@
 	margin-bottom:30px;
 }
 
-.main.container {
+.main.container.background { 	
 	background-image: url("http://iwallpapers2.free.fr/images/Abstract/Sci_Fi_Wallpapers_1600x900.jpg");
-	height: 1000px;
 	position:absolute;
 	left:0;
 	right:0;
 	top:0;
-	z-index: -1;	
+	z-index: -1;
+
+}	
+.main.container {
+	height: 700px;
+}
+.main.container.content {
+	margin: 100px 150px 50px;
 }
 .blank.space {
+	margin-top: -100px;
 	height: 7000px;
 }
 .active.item {
