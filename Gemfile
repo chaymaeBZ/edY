@@ -32,7 +32,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 
 # editing courses
-gem "ckeditor"
+gem "ckeditor", github: 'galetahub/ckeditor'
 
 # using Facebook omniauth
 gem 'omniauth-facebook'
