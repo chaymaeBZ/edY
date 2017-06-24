@@ -5,14 +5,6 @@ GIT
     semantic-ui-sass (2.2.10.1)
       sass (>= 3.2)
 
-GIT
-  remote: https://github.com/galetahub/ckeditor.git
-  revision: 1cca2775e603cfe7805bfbfed00b1ce78ced5e44
-  specs:
-    ckeditor (4.2.3)
-      cocaine
-      orm_adapter (~> 0.5.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,6 +55,9 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
+    ckeditor (4.2.3)
+      cocaine
+      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -274,7 +269,7 @@ PLATFORMS
 DEPENDENCIES
   active_link_to
   byebug
-  ckeditor!
+  ckeditor
   coffee-rails (~> 4.2)
   devise
   faker
