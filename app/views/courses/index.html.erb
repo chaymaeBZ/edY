@@ -1,0 +1,13 @@
+<%= link_to "New course", new_course_path, class: 'ui blue button' %>
+<div style="margin-top: 30px;"></div>
+<div class="ui relaxed divided list">
+  <% @courses.each do |course| %>
+  <div class="item">
+    <i class="large book middle aligned icon"></i>
+    <div class="content">
+      <%= link_to course.title.capitalize, course, class: "header" %>      
+      <div class="description"><%= course.updated_at.strftime("Updated on %m/%d/%Y") + " ,  " %> <%= link_to "edit this course", edit_course_path(course) %></div>
+    </div>
+  </div>
+  <% end %>
+</div>

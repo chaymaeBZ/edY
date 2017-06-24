@@ -1,0 +1,19 @@
+<% if @course.errors.any? %>
+  <%= @articles.errors.full_messages.each do |message| %>
+      <%= message %>
+  <% end %>
+<% end %>
+
+<%= form_for(@course, html: { class: 'ui form' }) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.cktext_area :content, rows: 10 %>
+  </div>
+  
+  <%= f.submit "Save", class: "ui blue button" %>
+
+<% end %>
