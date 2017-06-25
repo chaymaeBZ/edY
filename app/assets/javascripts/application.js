@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require semantic-ui
+//= require jquery-ui
 //= require_tree .
 
 var readyLoad;
@@ -22,6 +23,9 @@ var readyLoad;
 
 
 readyLoad = function() {
+ $('.datepicker').datepicker();
+ $('.ui.fluid.dropdown').dropdown();
+ // alert('hi');
 };
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623001458) do
+ActiveRecord::Schema.define(version: 20170625134656) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20170623001458) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "courses_sessions", force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "session_id"
+    t.index ["course_id"], name: "index_courses_sessions_on_course_id"
+    t.index ["session_id"], name: "index_courses_sessions_on_session_id"
+  end
+
   create_table "mercury_images", force: :cascade do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -27,6 +34,15 @@ ActiveRecord::Schema.define(version: 20170623001458) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
