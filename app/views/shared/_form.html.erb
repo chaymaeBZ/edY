@@ -1,7 +1,14 @@
 <% if @course.errors.any? %>
-  <%= @articles.errors.full_messages.each do |message| %>
-      <%= message %>
-  <% end %>
+  <div class="ui error message" >
+    <div class="header" >
+      The form contains <%= pluralize(@course.errors.count, "error") %>:
+    </div>
+    <ul> 
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= form_for(@course, html: { class: 'ui form' }) do |f| %>
