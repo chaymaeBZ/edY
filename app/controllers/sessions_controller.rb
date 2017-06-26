@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    @session = Session.new
-    @selections = Course.all
+    @session = Session.new   
   end
 
   def create
@@ -21,6 +20,7 @@ class SessionsController < ApplicationController
 
   def show
     @session = Session.find(params[:id])
+    @courses = @session.courses
   end
 
   private
