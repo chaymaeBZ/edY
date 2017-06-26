@@ -5,16 +5,18 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # Time.now.parse!(session_params[:start_date])
+    # Time.now.parse!(session_params[:end_date])
     @session = Session.new(session_params)
     if @session.save
       redirect_to sessions_path, notice: "The session has been successfully created"
     else
-      render 'new'
+      render action: 'new'
     end
   end
 
   def index
-    @sessions = Session.order("created_at DESC")    
+    @sessions = Session.active.order("created_at DESC")    
   end
 
   def show

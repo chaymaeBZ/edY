@@ -1,2 +1,13 @@
-<h1>Sessions#index</h1>
-<p>Find me in app/views/sessions/index.html.erb</p>
+<h1 class="form-header">All Available Sessions</h1>
+
+<div class="ui relaxed divided list">
+  <% @sessions.each do |s| %>
+  <div class="item">
+    <i class="large book middle aligned icon"></i>
+    <div class="content">
+      <%= link_to s.title.capitalize, s, class: "header" %>      
+      <div class="description"><%= s.description %></div>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -21,7 +21,7 @@
     <%= f.label :description %>
     <%= f.text_area :description, rows: 5 %>
   </div>
-  <div class="ui calendar" id="calendar">
+  <div class="ui calendar" >
     <div class="ui input left icon">
       <i class="calendar icon"></i>
        <%= f.text_field :start_date, class: "datepicker", placeholder: "Start date" %>
@@ -29,7 +29,7 @@
   </div>
   <br/>
   
- <div class="ui calendar" id="calendar">
+ <div class="ui calendar">
     <div class="ui input left icon">
       <i class="calendar icon"></i>
        <%= f.text_field :end_date, class: "datepicker", placeholder: "End date" %>
@@ -38,12 +38,9 @@
   <br/>
   <div class="field">
     <%= f.label :course_ids, "Pick courses" %>
-    <%= f.select :course_ids, @selections.collect { |c| [c.title, c.id] }, { multiple: true, size: 10 },  class: "ui fluid dropdown", multiple: "" %>
+    <%= f.select :course_ids, Course.all.collect { |c| [c.title, c.id] }, { multiple: true, size: 10 }, class: "ui fluid dropdown", multiple: "" %>
   </div> 
   <%= f.submit "Save", class: "ui blue button" %>
 
 <% end %>
-<script>
- $(document).ready( 
-   $('#example1').calendar();)
-</script>
+
