@@ -1,7 +1,11 @@
 <div class="ui tall stacked segment">
  <h2 class="ui header"><%= @session.title %><div class="ui tag labels" style="display:inline;margin-left: 50px;">
   <a class="ui label">
-    $10.00
+    <% if @session.price.nil? or @session.price == 0 %>
+      <%= "Free" %>
+    <% else %>
+      <%= "$"+@session.price.to_s %>
+    <% end %>
   </a></div></h2>
   <div style="color: grey; font: light italic"><%= @session.start_date.to_s + " - " + @session.end_date.to_s %></div>
   <p style="margin:40px 20px; spacing: 0.2em;font-size: 20px;"><%= @session.description %></p> 

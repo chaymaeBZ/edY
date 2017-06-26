@@ -25,6 +25,6 @@ class SessionsController < ApplicationController
 
   private
     def session_params
-      params.require(:session).permit(:start_date, :end_date, :title, :description, :course_ids => [])
+      params.require(:session).permit(:start_date, :end_date, :title, :description, :price, :course_ids => [])
     end
 end
