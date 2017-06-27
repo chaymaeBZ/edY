@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
+  before_action :is_admin?, only: [:new, :edit]
   before_action :find, only: [:show, :edit, :update]
   before_action :has_access, only: [:show ]
   

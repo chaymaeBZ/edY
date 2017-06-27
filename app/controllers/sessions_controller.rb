@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :is_admin?, only: [:new, :edit]
   before_action :find, only: [:show]
   def new
     @session = Session.new   
@@ -16,6 +17,9 @@ class SessionsController < ApplicationController
 
   def index
     @sessions = Session.active.order("created_at DESC")    
+  end
+  
+  def edit
   end
 
   def show
