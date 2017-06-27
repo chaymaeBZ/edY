@@ -1,5 +1,5 @@
 <%= form_tag charges_path do %>
- <%= hidden_field_tag :amount, @session.price * 100 %>
+ <%= hidden_field_tag :session_id, @session.id %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">

@@ -4,7 +4,8 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @amount = params[:amount].to_i
+    @session = Session.find(params[:session_id])
+    @amount = @session.price.to_i * 100
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
@@ -15,6 +16,8 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'usd'
     )
+
+    @session.users << current_user
 
     rescue Stripe::CardError => e
       flash[:error] = e.message

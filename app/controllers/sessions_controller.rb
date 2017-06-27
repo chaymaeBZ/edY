@@ -1,11 +1,10 @@
 class SessionsController < ApplicationController
+  before_action :find, only: [:show]
   def new
     @session = Session.new   
   end
 
   def create
-    # Time.now.parse!(session_params[:start_date])
-    # Time.now.parse!(session_params[:end_date])
     @session = Session.new(session_params)
     if @session.save
       redirect_to sessions_path, notice: "The session has been successfully created"
@@ -19,12 +18,19 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @session = Session.find(params[:id])
-    @courses = @session.courses
+    if @session.users.include?(current_user)
+      render 'sessions/show_bought'
+    end
   end
+
 
   private
     def session_params
       params.require(:session).permit(:start_date, :end_date, :title, :description, :price, :course_ids => [])
+    end
+
+    def find
+      @session = Session.find(params[:id])
+      @courses = @session.courses
     end
 end

@@ -1,0 +1,24 @@
+
+
+
+<div class="ui tall stacked segment">
+ <h2 class="ui header"><%= @session.title %></h2>
+  <div style="color: grey; font: light italic"><%= @session.start_date.to_s + " - " + @session.end_date.to_s %></div>
+  <p style="margin:40px 20px; spacing: 0.2em;font-size: 20px;"><%= @session.description %></p> 
+  <p style="margin:40px 20px; spacing: 0.2em;font-size: 15px;">Courses that are available : <br/>
+  <div class="ui list" style="margin-left: 20px;margin-top: -20px;">
+    <% @courses.each do |course| %>
+      <div class="item">
+        <i class="checked calendar icon"></i>
+        <div class="content">
+          <%= link_to course.title, course %>
+        </div>
+      </div>  
+    <% end %>
+   </div> 
+       
+  </p>
+
+
+
+</div>

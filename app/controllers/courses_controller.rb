@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :has_access, only: [:show ]
   def index
     @courses = Course.order("created_at DESC")
   end
@@ -37,5 +38,8 @@ class CoursesController < ApplicationController
     def course_params
       params.require(:course).permit(:title, :content)
     end
+    
+    def has_access
       
+    end
 end
