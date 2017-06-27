@@ -1,11 +1,13 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :find, only: [:show, :edit, :update]
   before_action :has_access, only: [:show ]
+  
   def index
     @courses = Course.order("created_at DESC")
   end
 
   def show
-    @course = Course.find(params[:id])
   end
 
   def new
@@ -22,11 +24,10 @@ class CoursesController < ApplicationController
   end
 
   def edit
-    @course = Course.find(params[:id])
   end
 
   def update
-    @course = Course.find(params[:id])
+    
     if @course.update_attributes(course_params)
       redirect_to courses_path, notice: "the course has been updated"
     else
@@ -39,7 +40,20 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:title, :content)
     end
     
-    def has_access
-      
+    def find 
+      @course = Course.find(params[:id])
     end
+    def has_access
+      @find = false
+      
+      current_user.sessions.collect do |session|
+        if session.courses.include?(@course)
+          @find = true
+        end
+      end
+      if @find == false
+        redirect_to courses_path, notice: "You haven't bought that course yet! please look for it in a valid session"
+      end
+    end
+
 end
