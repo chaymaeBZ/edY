@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :is_admin?, only: [:new, :edit]
-  before_action :find, only: [:show]
+  before_action :is_admin?, only: [:new, :edit, :update]
+  before_action :find, only: [:show, :edit, :update]
   def new
     @session = Session.new   
   end
@@ -20,6 +20,14 @@ class SessionsController < ApplicationController
   end
   
   def edit
+  end
+
+  def update
+    if @session.update_attributes(session_params)
+      redirect_to sessions_path, notice: "The session has been updated"
+    else
+      render 'edit'
+    end
   end
 
   def show
