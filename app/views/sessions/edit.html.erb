@@ -1,0 +1,52 @@
+<h1 class="form-header">New Session !</h1>
+
+<% if @session.errors.any? %>
+  <div class="ui error message" >
+    <div class="header" >
+      The form contains <%= pluralize(@session.errors.count, "error") %>:
+    </div>
+    <ul> 
+      <% @session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for(@session, html: { class: 'ui form' }) do |f| %>
+  <div class="six wide field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="six wide field">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 5 %>
+  </div>
+  <div class="ui calendar" >
+    <div class="ui input left icon">
+      <i class="calendar icon"></i>
+       <%= f.text_field :start_date, class: "datepicker", placeholder: "Start date" %>
+    </div>
+  </div>
+  <br/>
+  
+ <div class="ui calendar">
+    <div class="ui input left icon">
+      <i class="calendar icon"></i>
+       <%= f.text_field :end_date, class: "datepicker", placeholder: "End date" %>
+    </div>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :course_ids, "Pick courses" %>
+    <%= f.select :course_ids, Course.all.collect { |c| [c.title, c.id] }, { multiple: true, size: 10 }, class: "ui fluid dropdown", multiple: "" %>
+  </div> 
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: '$'), step: :any %>
+    
+  </div>
+  <%= f.submit "Save", class: "ui blue button" %>
+
+<% end %>
+
+
