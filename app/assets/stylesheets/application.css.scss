@@ -65,3 +65,16 @@
 .form-header {
 	margin-bottom: 40px;
 }
+#center {
+	width: 655px;
+	margin: auto;
+}
+
+#center {
+	text-align:center;
+	.center-image, h2, p {
+		margin: auto;
+		display: inline;
+		float: none;
+	}
+}

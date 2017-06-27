@@ -1,0 +1,23 @@
+<%= form_tag charges_path do %>
+ <%= hidden_field_tag :amount, @session.price * 100 %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+      </article>
+<h1>Checkout</h1>
+<div class="ui divider"></div>
+ <h2 class="ui header"><%= @session.title %><a class="ui olive label">Available</a></h2>
+<a class="ui teal tag label">$<%= @session.price %></a>
+<br/><br/>
+<p style="font-style: normal;" >it's simple just click the link below and provide your card informations!</p>
+<br/><br/>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="<%= @session.price * 100 %> "
+          data-locale="auto"></script>
+<% end %>
+

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ 
+
   #get 'sessions/new'
 
   #get 'sessions/index'
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show], controller: 'users/users'
   resources :courses
   resources :sessions
+  resources :charges, only: [:new, :create]
 end

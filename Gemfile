@@ -36,6 +36,9 @@ gem "ckeditor"
 
 gem 'jquery-ui-rails'
 
+# Stripe gem for payments
+gem 'stripe'
+
 # using Facebook omniauth
 gem 'omniauth-facebook'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

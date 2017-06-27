@@ -22,5 +22,8 @@
    </div> 
        
   </p>
-  <%= link_to "Buy Now !", "#", class: "ui positive button", style: "margin-top: 30px; margin-left: 20px;" %>
+  <%= link_to "Buy Now !", new_charge_path(:id => @session.id), class: "ui positive button", style: "margin-top: 30px; margin-left: 20px;" %>
+
+
+
 </div>
