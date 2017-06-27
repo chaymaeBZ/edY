@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show], controller: 'users/users'
   resources :courses
   resources :sessions
-  resources :charges, only: [:new, :create]
+  resources :charges, only: [:new, :create, :index]
 end
