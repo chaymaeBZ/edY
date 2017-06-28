@@ -2,9 +2,9 @@
   <div class="ui container">
     
     <%= active_link_to 'Home', root_path, class: "item", active: :exact %>
-    <%= active_link_to 'work', "#", class: "item", active: :exact %>
-    <%= active_link_to 'Company', "#", class: "item", active: :exact %>
-    <%= active_link_to 'Careers', "#", class: "item", active: :exact %>
+    <%= active_link_to 'Offers', "#", class: "item", active: :exact %>
+    <%= active_link_to 'About us', "#", class: "item", active: :exact %>
+    <%= active_link_to 'Contact us', "#", class: "item", active: :exact %>
     
     <div class="right menu">
     <% if !user_signed_in? %>
@@ -17,6 +17,8 @@
     <% else %>
       <div class="item">
         <%= link_to current_user.name, user_path(current_user) %>
+      </div>
+      <div class="item">
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       </div>
     <% end %>

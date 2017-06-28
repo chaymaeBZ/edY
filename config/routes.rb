@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     end
   end
   resources :courses
-  resources :sessions
+  resources :sessions do
+    collection do
+      get 'statistics'
+    end
+  end
   resources :charges, only: [:new, :create, :index]
 end

@@ -36,6 +36,9 @@ gem "ckeditor"
 
 gem 'jquery-ui-rails'
 
+gem "chartkick"
+gem 'groupdate'
+
 # Stripe gem for payments
 gem 'stripe'
 

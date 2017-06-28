@@ -36,6 +36,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  def statistics
+  end
+
 
   private
     def session_params

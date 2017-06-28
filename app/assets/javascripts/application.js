@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require Chart.bundle
+//= require chartkick
 //= require ckeditor/init
 //= require semantic-ui
 //= require jquery-ui
