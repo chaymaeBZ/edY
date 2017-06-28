@@ -17,6 +17,7 @@
 //= require chartkick
 //= require ckeditor/init
 //= require semantic-ui
+//= require chosen-jquery
 //= require jquery-ui
 //= require_tree .
 
@@ -29,6 +30,7 @@ readyLoad = function() {
   dateFormat: "yy-mm-dd"
 });
  $('.ui.fluid.dropdown').dropdown();
+  $('.chosen-it').chosen();
  // alert('hi');
 };
 

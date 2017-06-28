@@ -39,6 +39,14 @@ gem 'jquery-ui-rails'
 gem "chartkick"
 gem 'groupdate'
 
+gem 'gravatar_image_tag'
+
+# gem for users messaging
+gem 'mailboxer'
+
+# gem for chooser when selecting recipients
+gem 'chosen-rails'
+
 # Stripe gem for payments
 gem 'stripe'
 

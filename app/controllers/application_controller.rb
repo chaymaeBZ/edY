@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: "Admin action only!"
     end
   end
+
+  rescue_from ActiveRecord::RecordNotFound do 
+    flash[:warning] = "Resource not found"
+    redirect_back_or root_path
+  end
   protected 
 
     def configure_permited_parameters
