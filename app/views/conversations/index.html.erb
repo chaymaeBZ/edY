@@ -2,7 +2,7 @@
 <div class="ui grid">
 <div class="four wide column">
 
-<div class="ui inverted segment" style="height:100%;">
+<div class="ui  segment" style="height:100%;">
 
 <div class="change effect">
 
@@ -19,13 +19,10 @@
       
     </div>
 
-<div style="margin: 8px;"></div>
-
-<% if current_user.admin? %>
-<%= link_to t(:new_article), new_article_path, class: "ui fluid blue button" %>
-<% end %>
-
-<div class="ui large inverted vertical menu" style="width: 100%;">
+<div style="margin: 40px 15px;">
+<%= link_to "All Courses", courses_path, class: 'ui blue button' %>
+</div>
+<div class="ui large  vertical menu" style="width: 100%;">
 
 
 <%= mailbox_section "inbox", @box, text: t(:inbox) %>
@@ -42,7 +39,6 @@
 </div>
 <div class="twelve wide column">
 <div class="user-content">
-<%= render 'shared/flash_message' %>
 </div>
 	
 <h1><%= t :conversations %></h1>

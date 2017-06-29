@@ -41,6 +41,7 @@ gem 'groupdate'
 
 gem 'gravatar_image_tag'
 
+gem 'will_paginate', '>= 3.1'
 # gem for users messaging
 gem 'mailboxer'
 
