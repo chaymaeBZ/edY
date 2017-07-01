@@ -52,7 +52,7 @@ class CoursesController < ApplicationController
           @find = true
         end
       end
-      if @find == false
+      if @find == false && !current_user.admin?
         redirect_to courses_path, notice: "You haven't bought that course yet! please look for it in a valid session"
       end
     end
