@@ -28,6 +28,7 @@
 <% end %>
 <%= link_to "All Courses", courses_path, class: 'ui fluid blue button', style: "margin-bottom: 10px" %>
 <%= link_to "Available sessions", sessions_path, class: 'ui fluid blue button', style: "margin-bottom: 10px" %>
+
 <%= link_to "My sessions", "/users/#{current_user.id}/sessions", class: 'ui fluid blue button', style: "margin-bottom: 10px" %>
 <% if current_user.admin? %>
 <%= link_to "Statics", statistics_sessions_path, class: 'ui fluid pink button' %>
@@ -36,9 +37,9 @@
 <div class="ui large  vertical menu" style="width: 100%;">
 
 
-<%= mailbox_section "inbox", @box, text: t(:inbox) %>
-<%= mailbox_section "sent", @box, text: t(:sent) %>
-<%= mailbox_section "trash", @box, text: t(:trash) %>
+<%= mailbox_section "inbox", @box %>
+<%= mailbox_section "sent", @box %>
+<%= mailbox_section "trash", @box %>
 
   
 </div>

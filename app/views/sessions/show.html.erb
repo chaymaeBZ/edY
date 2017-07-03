@@ -12,14 +12,7 @@
   <p style="margin:40px 20px; spacing: 0.2em;font-size: 20px;"><%= @session.description %></p> 
   <p style="margin:40px 20px; spacing: 0.2em;font-size: 15px;">Courses you'll take during the session : <br/>
   <div class="ui list" style="margin-left: 20px;margin-top: -20px;">
-    <% @courses.each do |course| %>
-      <div class="item">
-        <i class="checked calendar icon"></i>
-        <div class="content">
-          <%= course.title %>
-        </div>
-      </div>  
-    <% end %>
+      <%= render "courses" %>
    </div> 
        
   </p>
